@@ -26,11 +26,13 @@
 ## Illustrative Input and Desired Output
 
 - **Example input:**
+
 | title | review |
 |------|-----------|
 | Product as described | Perfect! I would recommend |
 
 - **Desired output:**
+
 | Rating Prediction | Confidence Level |
 |------------------------|-------------------------|
 | 5.0 | 0.988 | 
