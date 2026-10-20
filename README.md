@@ -23,68 +23,76 @@
 
 **Given the Amazon ratings in the Video Games category from May 1996 to September 2023, we will analyze the ratings for products in this category and predict the number of stars in future reviews.**
 
-[Replace the sentence above with one specific task. Describe what the project will do, not only the general topic that interests you.]
-
 ## Illustrative Input and Desired Output
 
-- **Example input:** [Provide one representative, non-sensitive input to the proposed system. A short, hypothetical, or sanitized example is acceptable.]
-- **Desired output:** [Show or describe what the system should return, predict, rank, extract, compare, or generate for that input.]
+- **Example input:**
+| title | review |
+|------|-----------|
+| Product as described | Perfect! I would recommend |
+
+- **Desired output:**
+| Rating Prediction | Confidence Level |
+|------------------------|-------------------------|
+| 5.0 | 0.988 | 
+
 
 ## Background and Starting Point
 
-[Briefly explain why your team is interested in this topic and how the idea began. What examples, experiences, questions, applications, or existing resources gave you the starting point? Provide enough context for the instructor to understand the idea, but do not write a literature review or extended theoretical justification.]
-
-Our team is interested in this topic
+Our team is interested in this topic because of our shared interest in video games, and we were both interested in looking at reviews related to video games. These interests inspired us to analyze how consumers view different products in this category, and we ended up finding a dataset containing reviews for video game products from Amazon. 
 
 ## Intended Output and Success
 
-[Describe what you want the project to produce or accomplish. For example, the output might be predicted labels, groups of related documents, discovered topics, extracted information, ranked search results, generated answers, a comparison of texts, or another useful result. If someone would use the output, identify that user and what the output would help them do.]
+We want the project to help predict future reviews and their ratings for different products. Being able to predict future ratings will help determine how well a product does on the market for businesses and companies to see consumers’ views of their product.
 
-**Success statement:** [In one sentence, describe what would make the output useful or successful. A formal evaluation metric is not required at this stage.]
+**Success statement:** Predicting the number of stars for future reviews will be helpful for determining how future reviewers will rate a specific product. It will also be particularly useful for analyzing how a certain type of product tends to be rated.
 
 ## Preferred Data
 
 ### Corpus
 
-[Describe the collection of text you expect to analyze. What does one item in the corpus represent—for example, one article, review, post, transcript, response, or policy document? What text and other useful fields or labels are available? Approximately how large is the corpus?]
+The collection of text we expect to analyze is the reviews for products located in the Video Games Category in Amazon. One item in the corpus represents a review for a product, which is composed of a star rating, title, and review text. The corpus contains 2.8 million reviews. For our purposes, we have taken a simple random sample of 23,118 reviews. The corpus contains other variables, such as user ID and timestamp, which we have removed to more precisely fit our objective.
 
 ### Source and Access
 
 - **Dataset or corpus name:** Amazon Reviews 2023
 - **Original source organization or creator:** Hugging Face, Creator: Yupeng Hou (hyp1231)
-- **Original collection process:** [Who originally collected the data, when, and how, if known? Distinguish the original source from a site that only redistributes the data.]
+- **Original collection process:** McAuley Lab (https://cseweb.ucsd.edu/~jmcauley/) collected the data in 2023 from Amazon.
 - **Direct link:** https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023
 - **Access method:** Download
-- **Access, licensing, privacy, or redistribution considerations:** [Explain any restrictions or write “None identified.”]
-- **Backup corpus (optional):** [Identify an alternative source if losing access to the preferred corpus is a meaningful risk, or write “Not needed at this stage.”]
+- **Access, licensing, privacy, or redistribution considerations:** None identified.
+- **Backup corpus (optional):** Not needed at this stage.
 
 ### Examples
 
-[Show or describe two or three representative examples. You may quote short, non-sensitive excerpts, describe typical documents, or link to examples. Do not copy private, restricted, or personally identifiable information into the repository.]
+| rating | title | text | 
+|------|------|-------|
+| 1.0 | dont waste your money | this item makes the games tough to enjoy.get a nintendo brand.cheap is not fun.pay more or you will regret it. |
+| 5.0 | Love it | It works great. Load screens load faster than my old xBox One. I'm a fan. I recommend. | 
+| 3.0 | Graphics were excellent. | Bought this for my grandkids. They said it was a little disappointing, as it didn't them long to beat the game. Graphics were excellent. |
 
 ### Fit with the Task
 
-[Explain briefly why this corpus contains the text, labels, metadata, or other information needed for the one-sentence task. Note any important information that may be missing or difficult to obtain.]
+The corpus is composed of titles and text reviews that are meant to explain the number of stars that a user rated an item as. They should be directly related, which will allow us to predict rating stars given the text content of a review. 
 
 ## Feasibility and Immediate Next Steps
 
-- **Minimum viable project:** [Describe the smallest complete version of the project your team could deliver successfully.]
-- **Data-access check:** [State whether a team member has successfully opened, downloaded, or queried the proposed data. If not, identify the next access step.]
-- **Largest current risk:** [Identify the most important uncertainty involving data, labels, computing, scope, evaluation, or another dependency.]
-- **Backup plan:** [Explain how the team could narrow or adjust the project if that risk occurs.]
+- **Minimum viable project:**  A model that predicts the number of stars future ratings will have when given a small sample to analyze.
+- **Data-access check:** All team members can access the data and have been able to clean the data for unnecessary variables.
+- **Largest current risk:** The most important uncertainty is that the “Video Games” category is quite vague and covers many types of products produced for video games.
+- **Backup plan:** If this risk is too large, we can find a different dataset that focuses on reviews for a specific type of video game product or change our focus to a different category that is more centralized on one type of product.
 - **Next two actions:**
-  1. [Action — responsible team member(s) — approximate target date]
-  2. [Action — responsible team member(s) — approximate target date]
+  1. [Make training and validation splits — Abigail Ma — 11/01]
+  2. [Tokenize reviews — Sky Shealy — 11/01]
 
 ## Possible Text-Analysis Method and Evaluation (Optional)
 
-[If your team already has ideas, name one or more text-analysis methods you may try. Then explain how you might judge whether the output performs well or is useful—for example, with a baseline, labeled test examples, appropriate metrics, retrieval checks, human review, error analysis, or comparison across approaches. It is acceptable to write “Not yet decided” and ask for guidance below.]
+[Not yet decided]
 
 ## Questions for the Instructor
 
-- [What feedback would help your team move forward? You might ask about scope, data feasibility, methods, evaluation, tools, or project risks.]
-- [Add another question, or write “No additional questions at this time.”]
+- Can this project be considered a sentiment analysis?
+- Is this more of a regression problem or a classification problem? The review score is ordinal. With classification, the predictions would more accurately reflect the format of the review. With regression, the ordinal nature of the rating scale is preserved more, and MSE could better reflect how well the model is doing than precision and recall, since MSE increases with a greater distance from the observed value unlike precision and recall. Would classification’s cross entropy loss be a more or less appropriate performance metric than regression’s MSE?
 
 ## AI-Use Statement
 
-[Identify any generative or agentic AI tool used to prepare this brief, its purpose, the work completed before consulting it, the advice incorporated, and how the output was verified. If your team did not use such a tool, state that clearly.]
+We did not use any AI tools or resources to complete this brief.
