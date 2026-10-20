@@ -16,14 +16,12 @@
 
 ## Team Members
 
-- [Full name]
-- [Full name, if applicable]
-- [Full name, if applicable]
-- [Full name, if applicable]
+- Sky Shealy
+- Abigail Ma
 
 ## One-Sentence Task
 
-**Given [the text or other input], we will [analyze, classify, retrieve, compare, or generate] [the intended output].**
+**Given the Amazon ratings in the Video Games category from May 1996 to September 2023, we will analyze the ratings for products in this category and predict the number of stars in future reviews.**
 
 [Replace the sentence above with one specific task. Describe what the project will do, not only the general topic that interests you.]
 
@@ -35,6 +33,8 @@
 ## Background and Starting Point
 
 [Briefly explain why your team is interested in this topic and how the idea began. What examples, experiences, questions, applications, or existing resources gave you the starting point? Provide enough context for the instructor to understand the idea, but do not write a literature review or extended theoretical justification.]
+
+Our team is interested in this topic
 
 ## Intended Output and Success
 
@@ -50,11 +50,11 @@
 
 ### Source and Access
 
-- **Dataset or corpus name:** [Name]
-- **Original source organization or creator:** [Source]
+- **Dataset or corpus name:** Amazon Reviews 2023
+- **Original source organization or creator:** Hugging Face, Creator: Yupeng Hou (hyp1231)
 - **Original collection process:** [Who originally collected the data, when, and how, if known? Distinguish the original source from a site that only redistributes the data.]
-- **Direct link:** [URL]
-- **Access method:** [Download, API, web collection, request, or another method]
+- **Direct link:** https://huggingface.co/datasets/McAuley-Lab/Amazon-Reviews-2023
+- **Access method:** Download
 - **Access, licensing, privacy, or redistribution considerations:** [Explain any restrictions or write “None identified.”]
 - **Backup corpus (optional):** [Identify an alternative source if losing access to the preferred corpus is a meaningful risk, or write “Not needed at this stage.”]
 
